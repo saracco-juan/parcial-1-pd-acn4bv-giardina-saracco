@@ -4,8 +4,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home - GLYPHA</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'lime-brand': '#ffd700',
+                        'dark-bg': '#1a1a2e',
+                        'card-bg': '#16213e'
+                    }
+                }
+            }
+        }
+    </script>
+
 </head>
 <body>
     
+    <body class="bg-dark-bg text-white font-sans">
+
+        <header class="bg-lime-brand text-black">
+            <div class="max-w-7xl mx-auto px-6 py-8">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <h1 class="text-4xl font-bold tracking-tight">GLYPHA</h1>
+                        <p class="text-lg mt-2 opacity-80">¡Vamos a encontrar tu tipografía ideal!</p>
+                    </div>
+                    <div class="flex gap-4">
+                        <button class="bg-black text-white px-8 py-3 rounded-full font-medium hover:bg-gray-800 transition-colors">
+                            Explorar
+                        </button>
+                        <button class="bg-white text-black px-8 py-3 rounded-full font-medium hover:bg-gray-100 transition-colors">
+                            Para Ti
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <footer class="bg-card-bg mt-20">
+            <div class="max-w-7xl mx-auto px-6 py-12">
+                <div class="text-center">
+                    <h2 class="text-3xl font-bold text-lime-brand mb-4">GLYPHA</h2>
+                    <p class="text-gray-400">Encuentra tu tipografía ideal</p>
+                </div>
+            </div>
+        </footer>
+
+    </body>
+
 </body>
 </html>
