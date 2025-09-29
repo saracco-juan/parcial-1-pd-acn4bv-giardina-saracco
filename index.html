@@ -11,7 +11,7 @@
             theme: {
                 extend: {
                     colors: {
-                        'lime-brand': '#ffd700',
+                        'amarillo': '#ffd700',
                         'dark-bg': '#1a1a2e',
                         'card-bg': '#16213e'
                     }
@@ -21,11 +21,11 @@
     </script>
 
 </head>
-<body>
+
     
     <body class="bg-dark-bg text-white font-sans">
 
-        <header class="bg-lime-brand text-black">
+        <header class="bg-amarillo text-black">
             <div class="max-w-7xl mx-auto px-6 py-8">
                 <div class="flex items-center justify-between">
                     <div>
@@ -46,34 +46,19 @@
 
         <main class="max-w-7xl mx-auto px-6 py-12">
 
-            <!-- Esto va a ser creado dinamicamente con js -->
+            
             <section class="mb-16">
                 <div class="flex items-center justify-between mb-8">
                     <h2 class="text-2xl font-bold">Categorías</h2>
-                    <a href="#" class="text-lime-brand hover:underline flex items-center gap-2">
+                    <a href="#" class="text-amarillo hover:underline flex items-center gap-2">
                         ver más
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                         </svg>
                     </a>
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <div class="bg-lime-brand rounded-2xl p-8 text-black hover:scale-105 transition-transform cursor-pointer">
-                        <div class="text-6xl font-bold mb-4">Aa</div>
-                        <h3 class="text-xl font-semibold">MODERNA</h3>
-                    </div>
-                    <div class="bg-lime-brand rounded-2xl p-8 text-black hover:scale-105 transition-transform cursor-pointer">
-                        <div class="text-6xl font-bold mb-4">Aa</div>
-                        <h3 class="text-xl font-semibold">ELEGANTE</h3>
-                    </div>
-                    <div class="bg-card-bg rounded-2xl p-8 border border-gray-700 hover:scale-105 transition-transform cursor-pointer">
-                        <div class="text-6xl font-bold mb-4 text-lime-brand">Aa</div>
-                        <h3 class="text-xl font-semibold">CLÁSICA</h3>
-                    </div>
-                    <div class="bg-card-bg rounded-2xl p-8 border border-gray-700 hover:scale-105 transition-transform cursor-pointer">
-                        <div class="text-6xl font-bold mb-4 text-lime-brand">Aa</div>
-                        <h3 class="text-xl font-semibold">CREATIVA</h3>
-                    </div>
+                <div id="categorias-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Las cards de categorías se generan aca -->
                 </div>
             </section>
 
@@ -82,7 +67,7 @@
                 <p class="text-gray-400 mb-8">Descubre la selección de lo que más te gusta</p>
                 
                 <div class="bg-card-bg rounded-3xl p-12 text-center">
-                    <div class="text-lime-brand text-8xl font-bold leading-none mb-8">
+                    <div class="text-amarillo text-8xl font-bold leading-none mb-8">
                         AåBbCc<br>
                         #9½<br>
                         ƒ%£©∑∅!
@@ -112,19 +97,19 @@
                 <div class="space-y-4">
                     <div class="flex items-center justify-between p-6 bg-card-bg rounded-xl hover:bg-gray-700 transition-colors cursor-pointer">
                         <span class="text-lg">Más usadas</span>
-                        <svg class="w-5 h-5 text-lime-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg class="w-5 h-5 text-amarillo" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                         </svg>
                     </div>
                     <div class="flex items-center justify-between p-6 bg-card-bg rounded-xl hover:bg-gray-700 transition-colors cursor-pointer">
                         <span class="text-lg">Tendencias</span>
-                        <svg class="w-5 h-5 text-lime-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg class="w-5 h-5 text-amarillo" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                         </svg>
                     </div>
                     <div class="flex items-center justify-between p-6 bg-card-bg rounded-xl hover:bg-gray-700 transition-colors cursor-pointer">
                         <span class="text-lg">Más usadas</span>
-                        <svg class="w-5 h-5 text-lime-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg class="w-5 h-5 text-amarillo" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                         </svg>
                     </div>
@@ -134,7 +119,7 @@
             <section>
                 <div class="flex items-center justify-between mb-8">
                     <h2 class="text-2xl font-bold">Diseñadores Destacados</h2>
-                    <a href="#" class="text-lime-brand hover:underline flex items-center gap-2">
+                    <a href="#" class="text-amarillo hover:underline flex items-center gap-2">
                         ver más
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
@@ -174,13 +159,24 @@
         <footer class="bg-card-bg mt-20">
             <div class="max-w-7xl mx-auto px-6 py-12">
                 <div class="text-center">
-                    <h2 class="text-3xl font-bold text-lime-brand mb-4">GLYPHA</h2>
+                    <h2 class="text-3xl font-bold text-amarillo mb-4">GLYPHA</h2>
                     <p class="text-gray-400">Encuentra tu tipografía ideal</p>
                 </div>
             </div>
         </footer>
 
+        <script src="categorias.js"></script>
+        <script>
+            
+            const contenedor = document.getElementById('categorias-container');
+
+            const cardsCategorias = categorias.map(categoria => categoria.generarCard()).join('');
+
+            contenedor.innerHTML = cardsCategorias;
+
+            console.log('Categorías cargadas:', categorias.length);
+
+        </script>
     </body>
 
-</body>
 </html>
