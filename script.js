@@ -63,6 +63,14 @@ const clasicaCard = document.getElementById('clasica-card');
 const creativaCard = document.getElementById('creativa-card');
 const fontDisplayCard = document.getElementById('display-font');
 const fontTestingInput = document.getElementById('font-testing');
+const clearTextButton = document.getElementById('clear-text-button');
+
+clearTextButton.addEventListener('click', () => {
+    fontTestingInput.value = '';
+    fontDisplayCard.textContent = 'Aa';
+    fuenteSeleccionada = '';
+    fontDisplayCard.style.fontFamily = '';
+});
 
 fontTestingInput.addEventListener('input', () => {
     const texto = fontTestingInput.value;
