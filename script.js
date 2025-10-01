@@ -55,33 +55,47 @@ const cardsCategorias = categorias.map(categoria => categoria.generarCard()).joi
 
 contenedor.innerHTML = cardsCategorias;
 
-console.log('Cantidad de categorias:', categorias.length);
+let fuenteSeleccionada = '';
 
 const modernaCard = document.getElementById('moderna-card');
 const eleganteCard = document.getElementById('elegante-card');
 const clasicaCard = document.getElementById('clasica-card');
 const creativaCard = document.getElementById('creativa-card');
-
 const fontDisplayCard = document.getElementById('display-font');
+const fontTestingInput = document.getElementById('font-testing');
 
+fontTestingInput.addEventListener('input', () => {
+    const texto = fontTestingInput.value;
+    fontDisplayCard.textContent = texto || 'Aa';
+    if (fuenteSeleccionada) {
+        fontDisplayCard.style.fontFamily = fuenteSeleccionada;
+    }
+    if(texto.length === 30){
+        fontDisplayCard.textContent = 'Has alcanzado el límite de 30 caracteres.';
+    }
+});
 
 modernaCard.addEventListener('click', () => {
     console.log('Categoría MODERNA clickeada');
     fontDisplayCard.style.fontFamily = 'sansation, sans-serif';
+    fuenteSeleccionada = 'sansation, sans-serif';
 });
 
 eleganteCard.addEventListener('click', () => {
     console.log('Categoría ELEGANTE clickeada');
     fontDisplayCard.style.fontFamily = 'playfair-display, serif';
+    fuenteSeleccionada = 'playfair-display, serif';
 }
 );
 
 clasicaCard.addEventListener('click', () => {
     console.log('Categoría CLÁSICA clickeada');
     fontDisplayCard.style.fontFamily = 'roboto, sans-serif';
+    fuenteSeleccionada = 'roboto, sans-serif';
 });
 
 creativaCard.addEventListener('click', () => {
     console.log('Categoría CREATIVA clickeada');
     fontDisplayCard.style.fontFamily = 'montserrat, sans-serif';
+    fuenteSeleccionada = 'montserrat, sans-serif';
 });
