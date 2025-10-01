@@ -66,9 +66,65 @@ const montserratCard = document.getElementById('montserrat-card');
 const fontDisplayCard = document.getElementById('display-font');
 const fontTestingInput = document.getElementById('font-testing');
 const clearTextButton = document.getElementById('clear-text-button');
+const favouriteButton = document.getElementById('favourite-button');
+
+favouriteButton.addEventListener('click', () => {
+    if (fuenteSeleccionada) {
+        let favoritas = JSON.parse(localStorage.getItem('fuentesFavoritas')) || [];
+        if (!favoritas.includes(fuenteSeleccionada)) {
+            favoritas.push(fuenteSeleccionada);
+            localStorage.setItem('fuentesFavoritas', JSON.stringify(favoritas));
+            fontDisplayCard.textContent = `Fuente ${fuenteSeleccionada} añadida a favoritas!`;
+            setTimeout(() => {
+                clearDisplayFont();
+            }, 4000);
+        } else {
+            alert(`La fuente ${fuenteSeleccionada} ya está en favoritas.`);
+        }
+    } else {
+        fontDisplayCard.textContent = 'No seleccionaste ninguna fuente.';
+    }
+});
 
 clearTextButton.addEventListener('click', () => {
     fontTestingInput.value = '';
+    clearDisplayFont();
+});
+
+fontTestingInput.addEventListener('input', () => {
+    const texto = fontTestingInput.value;
+    if (texto) {
+        fontDisplayCard.textContent = texto;
+    } else {
+        clearDisplayFont();
+    }
+    if(texto.length === 30){
+        fontDisplayCard.textContent = 'Has alcanzado el límite de 30 caracteres.';
+    }
+});
+
+sansationCard.addEventListener('click', () => {
+    fontDisplayCard.style.fontFamily = 'sansation, sans-serif';
+    fuenteSeleccionada = 'sansation, sans-serif';
+});
+
+playfairCard.addEventListener('click', () => {
+    fontDisplayCard.style.fontFamily = 'playfair-display, serif';
+    fuenteSeleccionada = 'playfair-display, serif';
+}
+);
+
+robotoCard.addEventListener('click', () => {
+    fontDisplayCard.style.fontFamily = 'roboto, sans-serif';
+    fuenteSeleccionada = 'roboto, sans-serif';
+});
+
+montserratCard.addEventListener('click', () => {
+    fontDisplayCard.style.fontFamily = 'montserrat, sans-serif';
+    fuenteSeleccionada = 'montserrat, sans-serif';
+});
+
+const clearDisplayFont = () => {
     fontDisplayCard.innerHTML = `<div id="display-font"
                     class="text-amarillo text-8xl font-bold leading-none mb-8 break-words whitespace-normal w-full">
                     AåBbCc<br>
@@ -77,46 +133,4 @@ clearTextButton.addEventListener('click', () => {
                 </div>`;
     fuenteSeleccionada = '';
     fontDisplayCard.style.fontFamily = '';
-});
-
-fontTestingInput.addEventListener('input', () => {
-    const texto = fontTestingInput.value;
-    if (texto) {
-        fontDisplayCard.textContent = texto;
-    } else {
-        fontDisplayCard.innerHTML = `<div id="display-font"
-                    class="text-amarillo text-8xl font-bold leading-none mb-8 break-words whitespace-normal w-full">
-                    AåBbCc<br>
-                    #9½<br>
-                    ƒ%£©∑∅!
-                </div>`;
-    }
-    if(texto.length === 30){
-        fontDisplayCard.textContent = 'Has alcanzado el límite de 30 caracteres.';
-    }
-});
-
-sansationCard.addEventListener('click', () => {
-    console.log('Fuente SANSATION clickeada');
-    fontDisplayCard.style.fontFamily = 'sansation, sans-serif';
-    fuenteSeleccionada = 'sansation, sans-serif';
-});
-
-playfairCard.addEventListener('click', () => {
-    console.log('Fuente PLAYFAIR DISPLAY clickeada');
-    fontDisplayCard.style.fontFamily = 'playfair-display, serif';
-    fuenteSeleccionada = 'playfair-display, serif';
-}
-);
-
-robotoCard.addEventListener('click', () => {
-    console.log('Fuente ROBOTO clickeada');
-    fontDisplayCard.style.fontFamily = 'roboto, sans-serif';
-    fuenteSeleccionada = 'roboto, sans-serif';
-});
-
-montserratCard.addEventListener('click', () => {
-    console.log('Fuente MONTSEERRAT clickeada');
-    fontDisplayCard.style.fontFamily = 'montserrat, sans-serif';
-    fuenteSeleccionada = 'montserrat, sans-serif';
-});
+};
