@@ -51,14 +51,23 @@
 
     <main class="max-w-7xl mx-auto px-6 py-12">
 
-
         <section class="mb-16">
             <div class="flex flex-col justify-between">
                 <h2 class="text-2xl font-bold mb-4">Categorías</h2>
-                <p class="text-gray-400 mb-8">Haz click en una tarjeta para probar las distintas fuentes!</p>
+                <p class="text-gray-400 mb-8">Haz click en una tarjeta para ver las fuentes segun su categoría!</p>
             </div>
             <div id="categorias-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Las cards de categorías se generan aca -->
+                <!-- Las cards de categorias se generan aca -->
+            </div>
+        </section>        
+
+        <section class="mb-16">
+            <div class="flex flex-col justify-between">
+                <h2 class="text-2xl font-bold mb-4">Tipografías en tendencias</h2>
+                <p class="text-gray-400 mb-8">Haz click en una tarjeta para probar las distintas fuentes!</p>
+            </div>
+            <div id="tipografias-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Las cards de tipografias se generan aca -->
             </div>
         </section>
 
@@ -67,7 +76,8 @@
             <p class="text-gray-400 mb-4">Descubre la selección de lo que más te gusta</p>
             <input type="text" id="font-testing"
                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-8"
-                placeholder="Escriba aqui para probar la fuente seleccionada." maxlength="30" />
+                placeholder="Escriba aqui para probar la fuente seleccionada." maxlength="30" 
+            />
 
             <div class="bg-card-bg rounded-3xl p-12 text-center">
                 <div id="display-font"
@@ -175,7 +185,8 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="tipografia.js"></script>
+    <script src="categoria.js"></script>
 </body>
 
 </html>
