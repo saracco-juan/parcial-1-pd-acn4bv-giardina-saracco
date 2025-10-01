@@ -1,5 +1,3 @@
-
-
 class Categoria {
 
     constructor(nombre, colorCard, colorTexto, fontFamily, id) {
@@ -67,14 +65,28 @@ const clearTextButton = document.getElementById('clear-text-button');
 
 clearTextButton.addEventListener('click', () => {
     fontTestingInput.value = '';
-    fontDisplayCard.textContent = 'Aa';
+    fontDisplayCard.innerHTML = `<div id="display-font"
+                    class="text-amarillo text-8xl font-bold leading-none mb-8 break-words whitespace-normal w-full">
+                    AåBbCc<br>
+                    #9½<br>
+                    ƒ%£©∑∅!
+                </div>`;
     fuenteSeleccionada = '';
     fontDisplayCard.style.fontFamily = '';
 });
 
 fontTestingInput.addEventListener('input', () => {
     const texto = fontTestingInput.value;
-    fontDisplayCard.textContent = texto || 'Aa';
+    if (texto) {
+        fontDisplayCard.textContent = texto;
+    } else {
+        fontDisplayCard.innerHTML = `<div id="display-font"
+                    class="text-amarillo text-8xl font-bold leading-none mb-8 break-words whitespace-normal w-full">
+                    AåBbCc<br>
+                    #9½<br>
+                    ƒ%£©∑∅!
+                </div>`;
+    }
     if (fuenteSeleccionada) {
         fontDisplayCard.style.fontFamily = fuenteSeleccionada;
     }
