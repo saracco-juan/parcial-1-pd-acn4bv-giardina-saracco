@@ -67,8 +67,24 @@ const fontDisplayCard = document.getElementById('display-font');
 const fontTestingInput = document.getElementById('font-testing');
 const clearTextButton = document.getElementById('clear-text-button');
 const favouriteButton = document.getElementById('favourite-button');
+const favouritesContainer = document.getElementById('favourites-container');
+
+const mostrarFavoritas = () => {
+    const favoritas = JSON.parse(localStorage.getItem('fuentesFavoritas')) || [];
+    favouritesContainer.innerHTML = '<span class="text-lg text-white">Fuentes Favoritas</span>';
+    favoritas.forEach(favorita => {
+        const div = document.createElement('div');
+        div.className = 'text-white';
+        div.textContent = favorita;
+        favouritesContainer.appendChild(div);
+    });
+};
+
+mostrarFavoritas();
+
 
 favouriteButton.addEventListener('click', () => {
+    mostrarFavoritas();
     if (fuenteSeleccionada) {
         let favoritas = JSON.parse(localStorage.getItem('fuentesFavoritas')) || [];
         if (!favoritas.includes(fuenteSeleccionada)) {
@@ -104,24 +120,24 @@ fontTestingInput.addEventListener('input', () => {
 });
 
 sansationCard.addEventListener('click', () => {
-    fontDisplayCard.style.fontFamily = 'sansation, sans-serif';
-    fuenteSeleccionada = 'sansation, sans-serif';
+    fontDisplayCard.style.fontFamily = 'sansation';
+    fuenteSeleccionada = 'sansation';
 });
 
 playfairCard.addEventListener('click', () => {
-    fontDisplayCard.style.fontFamily = 'playfair-display, serif';
-    fuenteSeleccionada = 'playfair-display, serif';
+    fontDisplayCard.style.fontFamily = 'playfair-display';
+    fuenteSeleccionada = 'playfair-display';
 }
 );
 
 robotoCard.addEventListener('click', () => {
-    fontDisplayCard.style.fontFamily = 'roboto, sans-serif';
-    fuenteSeleccionada = 'roboto, sans-serif';
+    fontDisplayCard.style.fontFamily = 'roboto';
+    fuenteSeleccionada = 'roboto';
 });
 
 montserratCard.addEventListener('click', () => {
-    fontDisplayCard.style.fontFamily = 'montserrat, sans-serif';
-    fuenteSeleccionada = 'montserrat, sans-serif';
+    fontDisplayCard.style.fontFamily = 'montserrat';
+    fuenteSeleccionada = 'montserrat';
 });
 
 const clearDisplayFont = () => {
