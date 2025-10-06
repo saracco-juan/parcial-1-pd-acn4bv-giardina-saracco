@@ -69,13 +69,24 @@ const clearTextButton = document.getElementById('clear-text-button');
 const favouriteButton = document.getElementById('favourite-button');
 const favouritesContainer = document.getElementById('favourites-container');
 
+// ---------------------Guardar y recuperar fuentes favoritas con localStorage
+
+const favoritasStorage = localStorage.getItem('fuentesFavoritas');
+
+const favoritas = favoritasStorage ? JSON.parse(favoritasStorage) : []
+
 const mostrarFavoritas = () => {
-    const favoritas = JSON.parse(localStorage.getItem('fuentesFavoritas')) || [];
+
     favouritesContainer.innerHTML = '<span class="text-lg text-white">Fuentes Favoritas</span>';
+
     favoritas.forEach(favorita => {
+
         const div = document.createElement('div');
+
         div.className = 'text-white';
+
         div.textContent = favorita;
+
         favouritesContainer.appendChild(div);
     });
 };
@@ -84,15 +95,21 @@ mostrarFavoritas();
 
 
 favouriteButton.addEventListener('click', () => {
-    mostrarFavoritas();
+
     if (fuenteSeleccionada) {
-        let favoritas = JSON.parse(localStorage.getItem('fuentesFavoritas')) || [];
+
         if (!favoritas.includes(fuenteSeleccionada)) {
+
             favoritas.push(fuenteSeleccionada);
+
             localStorage.setItem('fuentesFavoritas', JSON.stringify(favoritas));
+
             fontDisplayCard.textContent = `Fuente ${fuenteSeleccionada} añadida a favoritas!`;
+
             setTimeout(() => {
+
                 clearDisplayFont();
+
             }, 4000);
         } else {
             alert(`La fuente ${fuenteSeleccionada} ya está en favoritas.`);
@@ -100,7 +117,11 @@ favouriteButton.addEventListener('click', () => {
     } else {
         fontDisplayCard.textContent = 'No seleccionaste ninguna fuente.';
     }
+
+    mostrarFavoritas();
 });
+
+// ---------------------Prueba de fuentes seleccionadas
 
 clearTextButton.addEventListener('click', () => {
     fontTestingInput.value = '';
