@@ -11,5 +11,4 @@ Al final, se pueden apreciar dos secciones en desarrollo: una para explorar tipo
 - HTML
 - Git y GitHub (versionado)
 
-## Links útiles
-- Tablero de tareas: https://trello.com/b/waqmBsKT/glypha-giardina-saracco  
+ 
