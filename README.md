@@ -11,4 +11,7 @@ Al final, se pueden apreciar dos secciones en desarrollo: una para explorar tipo
 - HTML
 - Git y GitHub (versionado)
 
+## Documentacion | Informe
+
+- https://docs.google.com/document/d/1LzpfZE5sQ5xYCQhERC3KdjhKGO50Un2x23iUc9Y8RpU/edit?usp=sharing
  
